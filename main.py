@@ -75,3 +75,16 @@ def parse_pipeline(pipeline: Pipeline):
         "num_edges": num_edges,
         "is_dag": dag_result
     }
+
+
+
+
+@app.get("/")
+def root():
+    return {
+        "message": "VectorShift Pipeline API is running",
+        "endpoints": {
+            "docs": "/docs",
+            "parse_pipeline": "POST /pipelines/parse"
+        }
+    }
